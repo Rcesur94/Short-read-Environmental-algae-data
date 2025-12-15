@@ -1,10 +1,10 @@
-###Project overview 
+# Project overview 
 The goal of this project is to assemble 6 algal genomes using short read fastq sequences, use Prodigal to predict proteins, use HMM search to search for specific giant viral markers (Linux portion), then make a graph using some of the outputs from HMM search (R Portion). 
 
-### Environmental setup 
+# Environmental setup 
 interact -A introtogds -p normal_q -t 1:00:00
 
-#FastQ reads from SeqCoast, paired end reads
+# FastQ reads from SeqCoast, paired end reads
 7637_001_S111_R1_001.fastq.gz
 7637_001_S111_R2_001.fastq.gz
 7637_002_S112_R1_001.fastq.gz
@@ -18,7 +18,7 @@ interact -A introtogds -p normal_q -t 1:00:00
 7637_006_S112_R1_001.fastq.gz
 7637_006_S112_R2_001.fastq.gz
 
-#Run SPAdes to assemble genome, run spades.sh
+# Run SPAdes to assemble genome, run spades.sh
 
 #!/bin/bash
 
@@ -40,7 +40,7 @@ spades.py -1 7637_004_S114_R1_001.fastq.gz -2 7637_004_S114_R2_001.fastq.gz -t 1
 spades.py -1 7637_005_S115_R1_001.fastq.gz -2 7637_005_S115_R2_001.fastq.gz -t 16 -o 005_assembly 
 spades.py -1 7637_006_S116_R1_001.fastq.gz -2 7637_006_S116_R2_001.fastq.gz -t 16 -o 006_assembly
 
-#Run Prodigal to predict proteins 
+# Run Prodigal to predict proteins 
 This uses the nucleic acid fasta file, converts to proteins, then back to nucleic acid. 
 
 prodigal -i scaffolds.fasta -a 001scaffolds.faa -d 001scaffolds.fna
@@ -50,7 +50,7 @@ prodigal -i scaffolds.fasta -a 004scaffolds.faa -d 004scaffolds.fna
 prodigal -i scaffolds.fasta -a 005scaffolds.faa -d 005scaffolds.fna
 prodigal -i scaffolds.fasta -a 006scaffolds.faa -d 006scaffolds.fna
 
-#HMMER Search 
+# HMMER Search 
 This searches for sequence homologs and makes sequence alignments using probabilistic models called profile hidden Markov models. I searched using a database we use in the lab, NCLDV_markers.hmm
 
 hmmsearch --tblout 001hmm.hmmout -E 1e-5 NCLDV_markers.hmm 001scaffolds.faa
@@ -60,11 +60,11 @@ hmmsearch --tblout 004hmm.hmmout -E 1e-5 NCLDV_markers.hmm 004scaffolds.faa
 hmmsearch --tblout 005hmm.hmmout -E 1e-5 NCLDV_markers.hmm 005scaffolds.faa
 hmmsearch --tblout 006hmm.hmmout -E 1e-5 NCLDV_markers.hmm 006scaffolds.faa
 
-# You can view the hmm.out files to see what markers it found. The sample with the most giant viral marker genesn
+# You can view the hmm.out files to see what markers it found. The sample with the most giant viral marker genes was sample #3. Below is what the hmm.out file looked like. 
 
 
 
-### R script 
+# R script 
 #load required libraries
 library(ggplot2)
 
