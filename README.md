@@ -1,4 +1,4 @@
-#Project overview 
+##Project overview 
 
 
 
@@ -6,11 +6,11 @@
 
 
 
-# Environmental setup 
+### Environmental setup 
+interact -A introtogds -p normal_q -t 1:00:00
 
 
-
-# R script 
+### R script 
 #load required libraries
 library(ggplot2)
 
@@ -20,7 +20,7 @@ df <- read.table("marker_hits.tsv",
                  sep = "\t",
 stringsAsFactors = FALSE)
 
-# check table to see this is what you think it should look like 
+#check table to see this is what you think it should look like 
 head(df)
 
 #extract contig length 
