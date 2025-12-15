@@ -18,7 +18,7 @@ interact -A introtogds -p normal_q -t 1:00:00
 7637_006_S112_R1_001.fastq.gz <br> 
 7637_006_S112_R2_001.fastq.gz <br>
 
-## Run SPAdes to assemble genome, run spades.sh
+## Run SPAdes to assemble genome, run spades.sh <br> 
 
 #!/bin/bash <br>
 
@@ -32,7 +32,7 @@ interact -A introtogds -p normal_q -t 1:00:00
 #SBATCH --partition=normal_q <br>
 module load gcc/8.1.0 <br>
 
-/projects/Aylward_Lab/Robin/Sequencing_Data/7637_Illumina/
+/projects/Aylward_Lab/Robin/Sequencing_Data/7637_Illumina/ <br>
 spades.py -1 7637_001_S111_R1_001.fastq.gz -2 7637_001_S111_R2_001.fastq.gz -t 16 -o 001_assembly <br>
 spades.py -1 7637_002_S112_R1_001.fastq.gz -2 7637_002_S112_R2_001.fastq.gz -t 16 -o 002_assembly <br>
 spades.py -1 7637_003_S113_R1_001.fastq.gz -2 7637_003_S113_R2_001.fastq.gz -t 16 -o 003_assembly <br>
