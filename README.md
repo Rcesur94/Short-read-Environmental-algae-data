@@ -73,7 +73,7 @@ hmmsearch --tblout 006hmm.hmmout -E 1e-5 NCLDV_markers.hmm 006scaffolds.faa <br>
 library(ggplot2)
 
 ## Read the table into R 
-df <- read.table("marker_hits.tsv",
+df <- read.table("003hmmparsed.tsv",
                  header = TRUE,
                  sep = "\t",
 stringsAsFactors = FALSE)
