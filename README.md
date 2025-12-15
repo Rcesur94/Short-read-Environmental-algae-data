@@ -1,5 +1,5 @@
 # Project overview 
-The goal of this project is to assemble 6 algal genomes using short read fastq sequences, use Prodigal to predict proteins, use HMM search to search for specific giant viral markers (Linux portion), then make a graph using some of the outputs from HMM search (R Portion). 
+The goal of this project is to assemble 6 algal genomes (environmental samples from various locations inclusing Pandempus Pond and Virginia Tech) using short read fastq sequences, use Prodigal to predict proteins, use HMM search to search for specific giant viral markers (Linux portion), then make a graph using some of the outputs from HMM search (R Portion). 
 
 ## Environmental setup 
 interact -A introtogds -p normal_q -t 1:00:00
