@@ -33,32 +33,32 @@ interact -A introtogds -p normal_q -t 1:00:00
 module load gcc/8.1.0
 
 /projects/Aylward_Lab/Robin/Sequencing_Data/7637_Illumina/
-spades.py -1 7637_001_S111_R1_001.fastq.gz -2 7637_001_S111_R2_001.fastq.gz -t 16 -o 001_assembly 
-spades.py -1 7637_002_S112_R1_001.fastq.gz -2 7637_002_S112_R2_001.fastq.gz -t 16 -o 002_assembly 
-spades.py -1 7637_003_S113_R1_001.fastq.gz -2 7637_003_S113_R2_001.fastq.gz -t 16 -o 003_assembly 
-spades.py -1 7637_004_S114_R1_001.fastq.gz -2 7637_004_S114_R2_001.fastq.gz -t 16 -o 004_assembly 
-spades.py -1 7637_005_S115_R1_001.fastq.gz -2 7637_005_S115_R2_001.fastq.gz -t 16 -o 005_assembly 
-spades.py -1 7637_006_S116_R1_001.fastq.gz -2 7637_006_S116_R2_001.fastq.gz -t 16 -o 006_assembly
+spades.py -1 7637_001_S111_R1_001.fastq.gz -2 7637_001_S111_R2_001.fastq.gz -t 16 -o 001_assembly <br>
+spades.py -1 7637_002_S112_R1_001.fastq.gz -2 7637_002_S112_R2_001.fastq.gz -t 16 -o 002_assembly <br>
+spades.py -1 7637_003_S113_R1_001.fastq.gz -2 7637_003_S113_R2_001.fastq.gz -t 16 -o 003_assembly <br>
+spades.py -1 7637_004_S114_R1_001.fastq.gz -2 7637_004_S114_R2_001.fastq.gz -t 16 -o 004_assembly <br>
+spades.py -1 7637_005_S115_R1_001.fastq.gz -2 7637_005_S115_R2_001.fastq.gz -t 16 -o 005_assembly <br>
+spades.py -1 7637_006_S116_R1_001.fastq.gz -2 7637_006_S116_R2_001.fastq.gz -t 16 -o 006_assembly <br>
 
 ## Run Prodigal to predict proteins 
 This uses the nucleic acid fasta file, converts to proteins, then back to nucleic acid. 
 
-prodigal -i scaffolds.fasta -a 001scaffolds.faa -d 001scaffolds.fna
-prodigal -i scaffolds.fasta -a 002scaffolds.faa -d 002scaffolds.fna
-prodigal -i scaffolds.fasta -a 003scaffolds.faa -d 003scaffolds.fna
-prodigal -i scaffolds.fasta -a 004scaffolds.faa -d 004scaffolds.fna
-prodigal -i scaffolds.fasta -a 005scaffolds.faa -d 005scaffolds.fna
-prodigal -i scaffolds.fasta -a 006scaffolds.faa -d 006scaffolds.fna
+prodigal -i scaffolds.fasta -a 001scaffolds.faa -d 001scaffolds.fna <br>
+prodigal -i scaffolds.fasta -a 002scaffolds.faa -d 002scaffolds.fna <br>
+prodigal -i scaffolds.fasta -a 003scaffolds.faa -d 003scaffolds.fna <br>
+prodigal -i scaffolds.fasta -a 004scaffolds.faa -d 004scaffolds.fna <br>
+prodigal -i scaffolds.fasta -a 005scaffolds.faa -d 005scaffolds.fna <br>
+prodigal -i scaffolds.fasta -a 006scaffolds.faa -d 006scaffolds.fna <br>
 
 ## HMMER Search 
 This searches for sequence homologs and makes sequence alignments using probabilistic models called profile hidden Markov models. I searched using a database we use in the lab, NCLDV_markers.hmm
 
-hmmsearch --tblout 001hmm.hmmout -E 1e-5 NCLDV_markers.hmm 001scaffolds.faa
-hmmsearch --tblout 002hmm.hmmout -E 1e-5 NCLDV_markers.hmm 002scaffolds.faa
-hmmsearch --tblout 003hmm.hmmout -E 1e-5 NCLDV_markers.hmm 003scaffolds.faa
-hmmsearch --tblout 004hmm.hmmout -E 1e-5 NCLDV_markers.hmm 004scaffolds.faa
-hmmsearch --tblout 005hmm.hmmout -E 1e-5 NCLDV_markers.hmm 005scaffolds.faa
-hmmsearch --tblout 006hmm.hmmout -E 1e-5 NCLDV_markers.hmm 006scaffolds.faa
+hmmsearch --tblout 001hmm.hmmout -E 1e-5 NCLDV_markers.hmm 001scaffolds.faa <br>
+hmmsearch --tblout 002hmm.hmmout -E 1e-5 NCLDV_markers.hmm 002scaffolds.faa <br>
+hmmsearch --tblout 003hmm.hmmout -E 1e-5 NCLDV_markers.hmm 003scaffolds.faa <br>
+hmmsearch --tblout 004hmm.hmmout -E 1e-5 NCLDV_markers.hmm 004scaffolds.faa <br>
+hmmsearch --tblout 005hmm.hmmout -E 1e-5 NCLDV_markers.hmm 005scaffolds.faa <br>
+hmmsearch --tblout 006hmm.hmmout -E 1e-5 NCLDV_markers.hmm 006scaffolds.faa <br>
 
 #You can view the hmm.out files to see what markers it found. The sample with the most giant viral marker genes was sample #3. Below is what some of the hmm.out file for sample 3 looked like. 
 
