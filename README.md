@@ -60,32 +60,36 @@ hmmsearch --tblout 004hmm.hmmout -E 1e-5 NCLDV_markers.hmm 004scaffolds.faa
 hmmsearch --tblout 005hmm.hmmout -E 1e-5 NCLDV_markers.hmm 005scaffolds.faa
 hmmsearch --tblout 006hmm.hmmout -E 1e-5 NCLDV_markers.hmm 006scaffolds.faa
 
-# You can view the hmm.out files to see what markers it found. The sample with the most giant viral marker genes was sample #3. Below is what the hmm.out file looked like. 
+## You can view the hmm.out files to see what markers it found. The sample with the most giant viral marker genes was sample #3. Below is what some of the hmm.out file for sample 3 looked like. 
+
+![003hmmout](https://github.com/user-attachments/assets/4653a89f-e3a5-4df6-97af-69699935444d)
 
 
+#From here I wanted to see if there were any patterns present that I could make a figure from. 
 
-# R script 
-#load required libraries
+## R script 
+
+# Load required libraries
 library(ggplot2)
 
-#Read the table into R 
+# Read the table into R 
 df <- read.table("marker_hits.tsv",
                  header = TRUE,
                  sep = "\t",
 stringsAsFactors = FALSE)
 
-#check table to see this is what you think it should look like 
+# Check table to see this is what you think it should look like 
 head(df)
 
-#extract contig length 
+# Extract contig length 
 df$Contig_length <- as.numeric(
     sub(".*length_([0-9]+)_.*", "\\1", df$Contig)
  )
 
-#Convert E-Value to base log 10
+# Convert E-Value to base log 10
 df$log10_Evalue <- -log10(as.numeric(df$E_value))
 
-#Plot graph
+# Plot graph
 ggplot(df, aes(x = Contig_length, y = log10_Evalue, color = Hit)) +
    geom_point(size = 2, alpha = 0.8) +
    theme_minimal() +
