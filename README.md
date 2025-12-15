@@ -5,7 +5,18 @@ The goal of this project is to assemble 6 algal genomes using short read fastq s
 interact -A introtogds -p normal_q -t 1:00:00
 
 ## FastQ reads from SeqCoast, paired end reads
-7637_001_S111_R1_001.fastq.gz  7637_001_S111_R2_001.fastq.gz  7637_002_S112_R1_001.fastq.gz  7637_002_S112_R2_001.fastq.gz  7637_003_S112_R1_001.fastq.gz  7637_003_S112_R2_001.fastq.gz  7637_004_S112_R1_001.fastq.gz  7637_004_S112_R2_001.fastq.gz  7637_005_S112_R1_001.fastq.gz  7637_005_S112_R2_001.fastq.gz  7637_006_S112_R1_001.fastq.gz  7637_006_S112_R2_001.fastq.gz
+7637_001_S111_R1_001.fastq.gz <br>
+7637_001_S111_R2_001.fastq.gz <br>
+7637_002_S112_R1_001.fastq.gz <br>
+7637_002_S112_R2_001.fastq.gz <br>
+7637_003_S112_R1_001.fastq.gz <br>
+7637_003_S112_R2_001.fastq.gz <br>
+7637_004_S112_R1_001.fastq.gz <br>
+7637_004_S112_R2_001.fastq.gz <br>
+7637_005_S112_R1_001.fastq.gz <br>
+7637_005_S112_R2_001.fastq.gz <br>
+7637_006_S112_R1_001.fastq.gz <br> 
+7637_006_S112_R2_001.fastq.gz <br>
 
 ## Run SPAdes to assemble genome, run spades.sh
 
