@@ -102,4 +102,4 @@ title = "HMM Marker vs Viral Contig Length"
 <img width="1103" height="373" alt="image" src="https://github.com/user-attachments/assets/a6d83475-16f1-4a06-a748-16ca97ffc9c6" />
 
 
-#This graph shows the RNAPS (DNA-directed RNA polymerase beta subunit) has the longest contigs. RNA Polymerases are present in cellular life, as we need to make proteins from the RNA. There are different forms of this gene. This is also one of the 7 marker genes in giant viruses, as there is much overlap between cellular life and giant viruses. This graph is one graph of many that can be used from the hmmoutputs looking for marker genes from the algae sequenced. 
+#This graph looked at the marker genes in sample 3. This shows the RNAPS (DNA-directed RNA polymerase beta subunit) has the longest contigs. RNA Polymerases are present in cellular life, as we need to make proteins from the RNA. There are different forms of this gene. This is also one of the 7 marker genes in giant viruses, as there is much overlap between cellular life and giant viruses. This graph is one graph of many that can be used from the hmmoutputs looking for marker genes from the algae sequenced. 
