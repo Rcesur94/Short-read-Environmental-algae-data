@@ -20,17 +20,17 @@ interact -A introtogds -p normal_q -t 1:00:00
 
 ## Run SPAdes to assemble genome, run spades.sh
 
-#!/bin/bash
+#!/bin/bash <br>
 
-#SBATCH --mail-user=rcesur94@vt.edu
-#SBATCH --mail-type=all
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=16
-#SBATCH --mem-per-cpu=6G
-#SBATCH -t 60:00:00
-#SBATCH -A aylwardlab
-#SBATCH --partition=normal_q
-module load gcc/8.1.0
+#SBATCH --mail-user=rcesur94@vt.edu <br>
+#SBATCH --mail-type=all <br>
+#SBATCH --nodes=1 <br>
+#SBATCH --ntasks-per-node=16 <br>
+#SBATCH --mem-per-cpu=6G <br>
+#SBATCH -t 60:00:00 <br>
+#SBATCH -A aylwardlab <br>
+#SBATCH --partition=normal_q <br>
+module load gcc/8.1.0 <br>
 
 /projects/Aylward_Lab/Robin/Sequencing_Data/7637_Illumina/
 spades.py -1 7637_001_S111_R1_001.fastq.gz -2 7637_001_S111_R2_001.fastq.gz -t 16 -o 001_assembly <br>
